@@ -1,0 +1,21 @@
+{% extends "clogin/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <!-- <h1 class="font-weight-light">Asi & Janne Wedding Quiz</h1> -->
+    <div class="card border-secondary" style="padding: 2%; background-image: linear-gradient(to right, #ffe6f3, #ffffff, #ffe6f3, #ffffff, #ffe6f3);">
+        <p class="font-weight-light" style="font-size: 110%;"><b>Syötä nimesi ja saamasi koodi tänne:</b></p>
+        <hr>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <input class="btn btn-outline-secondary" type="submit" value="Pelaamaan">
+        </form>
+    </div>
+    <hr>
+    <br>
+    <p class="font-weight-light">Tuloslistan löydät täältä:</p>
+    <a class="btn btn-outline-secondary" href="{% url 'quiz-board' %}" role="button">Tuloslista</a>
+    <br>
+    <br>
+    <hr>
+{% endblock content %}

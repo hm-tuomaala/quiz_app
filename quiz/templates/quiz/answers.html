@@ -1,0 +1,18 @@
+{% extends "clogin/base.html" %}
+{% block content %}
+    <h3 class="font-weight-light">Pelaaja: {{ name }}</h3>
+
+    <h3 class="font-weight-light">Sait tulokseksesi: {{score}} / {{num}}</h3>
+
+    <hr>
+    <br>
+
+    <h4 class="font-weight-light">Voit tarkastella sijoitustasi tuloslistalta:</h4>
+    <a class="btn btn-outline-secondary" href="{% url 'quiz-board' %}" role="button">Tuloslista</a>
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+
+{% endblock content %}
