@@ -1,8 +1,21 @@
 
 {% extends "clogin/base.html" %}
 {% block content %}
-    <h3 style="color: #595959;">Hupsis! Vaikuttaa siltä, että kirjoitit koodin väärin. <br>Yritä uudestaan.</h3>
+    <!-- <h3 style="color: #595959;">Hupsis! Vaikuttaa siltä, että kirjoitit koodin väärin. <br>Yritä uudestaan.</h3>
     <h5 style="color: #595959;">(Koodisi saattaa myös olla jo käytetty)<h5>
     <h2><a class="btn btn-outline-secondary" href="{% url 'login-home' %}" role="button">Yritä uudestaan</a></h2>
-    <div class="col-xs-12" style="height:300px;"></div>
+    <div class="col-xs-12" style="height:300px;"></div> -->
+    <h2 style="color: #4d0000; text-shadow: 1px 1px black;">Hups! Tapahtui virhe joka voi olla seurausta siitä, että:</h2>
+    <br>
+    <ul class="list-unstyled" style="color: #4d0000; text-shadow: 0px 0px black;">
+        <ul>
+            <li>Kirjoitit koodin väärin (huomaa isot ja pienet kirjaimet)</li>
+            <br>
+            <li>Koodisi on jo käytetty</li>
+        </ul>
+    </ul>
+    <br>
+    <br>
+    <h2><a class="btn btn-outline-secondary" href="{% url 'login-home' %}" role="button">Yritä uudestaan</a></h2>
+    <div class="col-xs-12" style="height:150px;"></div>
 {% endblock content %}

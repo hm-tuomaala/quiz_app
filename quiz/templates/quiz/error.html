@@ -1,0 +1,21 @@
+{% extends "clogin/base.html" %}
+{% block content %}
+    <h2 style="color: #4d0000; text-shadow: 1px 1px black;">Oho tapahtui virhe joka voi olla seurausta siitä, että:</h2>
+    <br>
+    <ul class="list-unstyled" style="color: #4d0000; text-shadow: 0px 0px black;">
+        <ul>
+            <li>Yritit lähettää vastatusta käytetyllä koodilla</li>
+            <br>
+            <li>Kirjoitit virheellisen urlin</li>
+            <br>
+            <li>Olet jo liian humalassa (Toni)</li>
+        </ul>
+    </ul>
+    <br>
+    <hr>
+    <p class="font-weight-light">Takaisin etusivulle:</p>
+    <a class="btn btn-outline-secondary" href="{% url 'login-home' %}" role="button">Etusivulle</a>
+    <hr>
+    <div class="col-xs-12" style="height:100px;"></div>
+
+{% endblock content %}

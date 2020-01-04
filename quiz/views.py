@@ -38,7 +38,6 @@ def submit(request, key):
                     'name' : valid_name,
                     'num' : num
                 }
-                #return HttpResponse('<h1>Postattu - valid</h1>')
                 return render(request, 'quiz/answers.html', context)
             else:
                 print(quiz_form.errors)
@@ -46,15 +45,18 @@ def submit(request, key):
         else:
             return render(request, 'quiz/quiz.html', context)
     else:
-        return HttpResponse('<h1>Invalid code</h1>')
+        return render(request, 'quiz/error.html')
+        #return HttpResponse('<h1>Invalid code</h1>')
 
 
 def board(request):
-    position = 1
+    position = 0
     sub_num = 0
+    temp_score = 0
     context = {
         'names' : []
     }
+
     for i in Keys.objects.values():
         if i['submitted']:
             context['names'].append([i['score'], i['name'], 0])
@@ -62,14 +64,14 @@ def board(request):
             sub_num += 1
 
     for n in context['names']:
+        if position == 0 or temp_score > n[0]:
+            position += 1
         n[2] = position
-        position += 1
+        temp_score = n[0]
 
     if sub_num == 0:
         context = {
             'names' : [[0, 0, 0]]
         }
-    print(context)
 
     return render(request, 'quiz/board.html', context)
-    # return HttpResponse('<h1>This is leaderboard</h1>')
