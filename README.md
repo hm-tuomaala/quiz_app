@@ -8,4 +8,4 @@ To run development server:
 
 ## Live demo
 Live demo of the site can be found in:  
-<to_do>
+https://wedding-quiz.herokuapp.com/
